@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+#  RewriteBase /
+#  RewriteRule %{REQUEST_URI} /documentation /website/index.html/$1 [R=301,NC,L]
+
+#    RewriteCond %{REQUEST_URI} ^/documentation
+#    RewriteRule . /webiste/index.html [L]
+
+#    RewriteCond %{REQUEST_URI} !^/website
+##    RewriteRule ^*.css$ - [L]
+##    RewriteRule ^*.js$ - [L]
+##    RewriteCond %{REQUEST_FILENAME} !-f
+##    RewriteCond %{REQUEST_FILENAME} !-d
+##    RewriteRule . /public/index.html [L]
+#
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /public/index.html [L]
+</IfModule>
